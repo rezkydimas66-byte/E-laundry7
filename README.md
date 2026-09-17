@@ -1,8 +1,7 @@
 # 🧺 E-Londri — Sistem Manajemen & Kasir Laundry Digital
-![Laravel Version](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel)
+![Laravel Version](https://img.shields.io/badge/Laravel-13-FF2D20?style=for-the-badge&logo=laravel)
 ![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 Aplikasi manajemen operasional dan sistem kasir *laundry* digital berbasis RESTful API. Proyek ini dirancang untuk
 mempermudah pencatatan transaksi kasir, pelacakan status pengerjaan cuci/setrika secara real-time, serta
@@ -105,7 +104,7 @@ Endpoint Utama
 |      POST   |     /api/orders             |  Membuat transaksi laundry baru                   |    Kasir        | 
 |      GET    |     /api/orders/{id}        |  Menampilkan detail transaksi berdasarkan ID      |    Public/Kasir | 
 |      PATCH  |     /api/orders/{id}/status |  Memperbarui status laundry (pending → completed) |    Kasir/Admin  |  
-|_------------|-----------------------------|---------------------------------------------------|-----------------|
+|-------------|-----------------------------|---------------------------------------------------|-----------------|
 Contoh Payload Request (POST /api/orders)
 {
     "customer_id": 1,
