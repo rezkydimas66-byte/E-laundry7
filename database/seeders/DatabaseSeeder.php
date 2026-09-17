@@ -5,7 +5,7 @@ namespace Database\Seeders;
 
 use App\Models\Customer;
 use App\Models\Service;
-use App\Models\orders;
+use App\Models\Order;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Support\Str;
@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // 1. Membuat 5 Master Layanan spesifik (menggunakan Sequence agar nama tidak acak)
         $services = Service::factory()
-            ->count(5)
+            ->count(10)
             ->state(new Sequence(
                 ['name' => 'Cuci Kiloan', 'price_per_kg' => 7000, 'unit' => 'kg'],
                 ['name' => 'Cuci Karpet', 'price_per_kg' => 15000, 'unit' => 'meter'],
@@ -32,12 +32,12 @@ class DatabaseSeeder extends Seeder
         // 3. Membuat 1 Transaksi Pesanan Lengkap untuk salah satu pelanggan acak
         $chosenCustomer = $customers->random();
         
-        $order = orders::create([
+        $order = Order::create([
             'customer_id' => $chosenCustomer->id,
             'invoice_code' => 'INV-' . strtoupper(Str::random(8)),
             'order_date' => now()->subDays(2),
             'completion_date' => now(),
-            'status' => 'completed',
+            'status' => 'selesai',
             'total_price' => 0,
         ]);
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class orders extends Model
+class Order extends Model
 {
     use HasFactory;
 
@@ -19,7 +19,11 @@ class orders extends Model
         'status', 
         'total_price'
     ];
-
+    protected $casts = [
+        'order_date' => 'date',
+        'pickup_date' => 'date',
+        'completed_at' => 'datetime',
+    ];
     /**
      * Relasi balik ke Customer (Setiap order dimiliki oleh satu customer)
      */

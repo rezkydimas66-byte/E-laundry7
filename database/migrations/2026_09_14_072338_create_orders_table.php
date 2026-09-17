@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('invoice_code')->unique();
             $table->date('order_date');
             $table->date('completion_date')->nullable();
-            $table->enum('status', ['pending', 'processing', 'ready', 'completed'])->default('pending');
+            $table->enum('status', ['pending', 'processing', 'siap','selesai'])->default('pending');
             $table->decimal('total_price', 12, 2);
             $table->timestamps();
     
